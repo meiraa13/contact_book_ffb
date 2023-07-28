@@ -4,18 +4,26 @@ import { ContactsCard } from "../../components/ContactsCard"
 import { Header } from "../../components/Header"
 import { StyledDash } from "./styles"
 import { ModalCreate } from "../../components/ModalCreate"
+import { ModalDeleteContact } from "../../components/ModalDeleteContact"
+import { UserContext } from "../../providers/UserContext"
+import { ModalUpdateContact } from "../../components/ModalUpdateContact"
+import { ModalEditUser } from "../../components/ModalEditUser"
 
 
 export function Dashboard(){
-    const { user, modalState, setModalState, editContent } = useContext(ContactContext)
+    const { modalState, setModalState, deleteContent, editContent } = useContext(ContactContext)
+    const { user, editUser } = useContext(UserContext)
 
 
     return(
         <>
             <Header />
+            {editUser && <ModalEditUser />}
 
             <StyledDash className="container">
                 <div>
+                    <h3>Welcome to your personal agenda! here you can manage all your contacts in a safe and easy way</h3>
+
                     <button onClick={()=>setModalState(true)}>Create new contact</button>
                     {modalState && <ModalCreate />}
                 </div>
@@ -28,7 +36,8 @@ export function Dashboard(){
                         </ul>
                         :<h2>You don't have any contacts yet</h2>
                     }
-                    {editContent && <ModalCreate />}
+                    {deleteContent && <ModalDeleteContact />}
+                    {editContent && <ModalUpdateContact />}
                 </div>
               
             </StyledDash>

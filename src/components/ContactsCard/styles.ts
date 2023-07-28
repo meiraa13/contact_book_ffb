@@ -11,6 +11,12 @@ export const StyledCards = styled.li`
     align-items: center;
     gap: 1rem;
     border: 1px solid;
+    padding: 1rem;
+
+    .button-div {
+        display: flex;
+        gap: 1rem;
+    }
 
     
 

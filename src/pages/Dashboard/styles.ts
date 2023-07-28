@@ -3,7 +3,6 @@ import styled from "styled-components"
 
 export const StyledDash = styled.div`
     display: flex;
-    background-color: aliceblue;
     justify-content: space-between;
 
     ul{
@@ -12,6 +11,8 @@ export const StyledDash = styled.div`
         display: flex;
         flex-direction: column;
         gap: 1rem;
+        max-height: 32rem;
+        overflow-y: auto;
     }
 
 

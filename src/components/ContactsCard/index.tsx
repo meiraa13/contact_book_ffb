@@ -8,16 +8,19 @@ interface IContactProps{
 
 export function ContactsCard({contact}:IContactProps){
     
-    const {setEditContent, removeContact } = useContext(ContactContext)
+    const {setDeleteContent, setEditContent } = useContext(ContactContext)
 
     return(
         
         <StyledCards>
-                <h1>{contact.fullname}</h1>
-                <p>{contact.email}</p>
-                <p>{contact.phoneNumber}</p>
-                <button>Update</button>
-                <button onClick={()=> removeContact(contact.id)}>Delete</button>
+                <h3>Name:{contact.fullname}</h3>
+                <p>Email:{contact.email}</p>
+                <p>Phone number:{contact.phoneNumber}</p>
+                <div className="button-div">
+                    <button onClick={()=> setEditContent(contact)}>Update</button>
+                    <button onClick={()=> setDeleteContent(contact)}>Delete</button>
+                </div>
+                
         </StyledCards>
         
 

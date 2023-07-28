@@ -17,7 +17,7 @@ export const GlobalReset = createGlobalStyle`
 
     body {
 
-        background-color: var(--grey-1);
+        background-color: var(--grey-2);
         color: white;
 
     }
