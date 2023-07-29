@@ -39,7 +39,7 @@ export function Register(){
                     <button type="submit">Register</button>
                 </form>
             </div>
-            <div>
+            <div className="title-div">
                 <h2>Create your profile</h2>
             </div>
          

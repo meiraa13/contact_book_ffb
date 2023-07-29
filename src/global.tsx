@@ -19,6 +19,10 @@ export const GlobalReset = createGlobalStyle`
         border-style: none;
     }   
 
+    button:hover{
+        opacity: 0.8;
+    }
+
     body {
 
         background-color: var(--grey-2);
@@ -48,12 +52,19 @@ export const GlobalReset = createGlobalStyle`
         padding: 1rem;
     }
 
-    .container2 {
-        max-width: 25rem;
-        margin: 0 auto;
-        width: 100%;
-        padding: 1rem;
-    
+    .icons {
+        width: 100px;
+    }
+
+    .icons2 {
+        width: 70px;
+    }
+
+    .createContact {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
     }
     
 `

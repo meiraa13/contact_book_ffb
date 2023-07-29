@@ -8,6 +8,8 @@ import { ModalDeleteContact } from "../../components/ModalDeleteContact"
 import { UserContext } from "../../providers/UserContext"
 import { ModalUpdateContact } from "../../components/ModalUpdateContact"
 import { ModalEditUser } from "../../components/ModalEditUser"
+import { MdContactPhone} from "react-icons/md"
+import { FiPlusCircle} from "react-icons/fi"
 
 
 export function Dashboard(){
@@ -24,7 +26,7 @@ export function Dashboard(){
                 <div className="left-div">
                     <h3>Welcome to your personal agenda! here you can manage all your contacts in a safe and easy way</h3>
 
-                    <button onClick={()=>setModalState(true)}>Create new contact</button>
+                    <button className="createContact" onClick={()=>setModalState(true)}>New Contact <FiPlusCircle size={20} /></button>
                     {modalState && <ModalCreate />}
                 </div>
 

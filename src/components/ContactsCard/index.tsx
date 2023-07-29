@@ -1,6 +1,7 @@
 import { useContext } from "react"
 import { ContactContext, IContact } from "../../providers/ContactContext"
 import { StyledCards } from "./styles"
+import { RiEditFill, RiDeleteBin6Fill } from "react-icons/ri"
 
 interface IContactProps{
     contact: IContact
@@ -17,8 +18,8 @@ export function ContactsCard({contact}:IContactProps){
                 <p>Email:{contact.email}</p>
                 <p>Phone number:{contact.phoneNumber}</p>
                 <div className="button-div">
-                    <button onClick={()=> setEditContent(contact)}>Update</button>
-                    <button onClick={()=> setDeleteContent(contact)}>Delete</button>
+                    <button className="icons2" onClick={()=> setEditContent(contact)}><RiEditFill size={20} /></button>
+                    <button className="icons2" onClick={()=> setDeleteContent(contact)}><RiDeleteBin6Fill size={20} /></button>
                 </div>
                 
         </StyledCards>

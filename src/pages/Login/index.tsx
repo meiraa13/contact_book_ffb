@@ -16,8 +16,8 @@ export function Login(){
 
     return(
         <StyledLogin >
-            <div>
-                <h2>Hello World</h2>
+            <div className="title-div">
+                <h2>Personal Kontact</h2>
             </div>
             <div className="login-div">
                 <h2>Login</h2>
@@ -30,8 +30,10 @@ export function Login(){
                     <p>{errors.password?.message}</p>
                     <button type="submit">Sign in</button>
                 </form>
-                <p>or click below to register</p>
-                <Link className="register" to={"/register"}>Register</Link>
+                <div className="bottom-div">
+                    <p>or click below to register</p>
+                    <Link className="register" to={"/register"}>Register</Link>
+                </div>
             </div>
          
         </StyledLogin>

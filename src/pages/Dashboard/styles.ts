@@ -24,5 +24,19 @@ export const StyledDash = styled.div`
         gap: 2rem;
     }
 
+    @media(max-width:768px){
+
+        flex-direction: column;
+        gap: 2rem;
+
+        .left-div {
+            width: 100%;
+        }
+
+        ul{
+            width: 100%;
+        }
+    }
+
 
 `

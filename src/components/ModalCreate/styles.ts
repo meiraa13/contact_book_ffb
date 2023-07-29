@@ -32,7 +32,6 @@ export const StyledModal = styled.div`
             display: flex;
             justify-content: space-between;
             align-items: center;
-            height: 20%;
             background-color: var(--color-tertiary);
             padding: 1rem;
             border-radius: 5px 5px 0 0 ;
@@ -42,7 +41,7 @@ export const StyledModal = styled.div`
             display: flex;
             flex-direction: column;
             padding: 1rem;
-            gap: 1rem;
+            gap: 0.5rem;
             height: 80%;
             justify-content: space-between;
             border: 100px;
@@ -60,5 +59,13 @@ export const StyledModal = styled.div`
 
         .btn-create {
             background-color: var(--grey-1);
+        }
+
+        .delete-modal-div {
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            align-items: center;
         }
 `

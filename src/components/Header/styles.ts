@@ -12,4 +12,21 @@ export const StyledHeader = styled.header`
         align-items: center;
     }
 
+    h2 {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    @media (max-width:375px){
+
+        height: fit-content;
+
+        div{
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+    }
+
 `
