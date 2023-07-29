@@ -8,7 +8,7 @@ import { TUpdateUserData, updateUserSchema } from "./validators"
 
 export function ModalEditUser(){
 
-    const { editUser, updateUser, setEditUser } = useContext(UserContext)
+    const { editUser, updateUser, setEditUser, removeUser } = useContext(UserContext)
 
     const {register, handleSubmit, formState: { errors }} = useForm<TUpdateUserData>({
         defaultValues:{
@@ -53,9 +53,8 @@ export function ModalEditUser(){
                         <input id="phoneNumber" {...register("phoneNumber")}></input>
                         <p>{errors.phoneNumber?.message}</p>
 
-                       
-                        
-                        <button className="btn-create">Update Contact</button>
+                        <button type="submit" className="btn-create">Update User</button>
+                        <button type="button" onClick={()=> removeUser(editUser!.id)}>Delete User</button>
                     </form>
                 </div>
             </div>

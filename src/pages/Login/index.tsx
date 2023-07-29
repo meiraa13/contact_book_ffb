@@ -4,6 +4,7 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import { useContext } from "react"
 import { UserContext } from "../../providers/UserContext"
 import { StyledLogin } from "./styles"
+import { Link } from "react-router-dom"
 
 
 
@@ -27,8 +28,10 @@ export function Login(){
                     <label htmlFor="password">Password</label>
                     <input type="password" id="password" {...register("password")} />
                     <p>{errors.password?.message}</p>
-                    <button type="submit">Entrar</button>
+                    <button type="submit">Sign in</button>
                 </form>
+                <p>or click below to register</p>
+                <Link to={"/register"}>Register</Link>
             </div>
          
         </StyledLogin>

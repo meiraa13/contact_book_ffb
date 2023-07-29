@@ -1,8 +1,8 @@
 import { z } from "zod"
 
 export const loginSchema = z.object({
-    email: z.string().email("Must be a valid email address"),
-    password: z.string().nonempty("can't be blank")
+    email: z.string().email("Please enter a valid email"),
+    password: z.string().nonempty("Please enter a password")
 })
 
 export type TLoginData = z.infer<typeof loginSchema>

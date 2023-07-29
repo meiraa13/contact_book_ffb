@@ -11,9 +11,8 @@ export function Header(){
         <StyledHeader>
             <div className="container">
                 <h2>{user?.nickname}</h2>
-                <button onClick={()=>setEditUser(user)}>Update profile</button>
+                <button onClick={()=>setEditUser(user)}>View profile</button>
                 <button onClick={logOut}>Log out</button>
-
             </div>
         </StyledHeader>
     )

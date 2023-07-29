@@ -4,6 +4,7 @@ import { api } from "../services/api";
 import { useNavigate } from "react-router-dom"
 import { toast } from "react-toastify"
 import { IUser } from "./ContactContext";
+import { TRegisterData } from "../pages/Register/validator";
 
 export interface IDefaultProviderProps{
     children: React.ReactNode;
@@ -12,13 +13,14 @@ export interface IDefaultProviderProps{
 
 interface IUserContext {
     userLogin: (data:TLoginData) => Promise<void>,
-    userRegister: (data:any) => Promise<void>,
+    userRegister: (data:TRegisterData) => Promise<void>,
     logOut: () => void,
     setUser: React.Dispatch<React.SetStateAction<IUser | null>>,
     user: IUser | null,
     editUser:IUser | null,
     setEditUser: React.Dispatch<React.SetStateAction<IUser | null>>,
-    updateUser: (data: any, userId: number) => Promise<void>
+    updateUser: (data: any, userId: number) => Promise<void>,
+    removeUser: (userId: number) => Promise<void>
 }
 
 export const UserContext = createContext({} as IUserContext)
@@ -51,9 +53,9 @@ export function UserProvider({children}:IDefaultProviderProps){
          }
     },[])
 
-    async function userRegister(data:any) {
+    async function userRegister(data:TRegisterData) {
         try {
-            await api.post('/users', data)
+            await api.post("/users", data)
             navigate("/")
             toast.success("Registered succesfully!")
             
@@ -65,7 +67,7 @@ export function UserProvider({children}:IDefaultProviderProps){
     
     async function userLogin(data: TLoginData ){
         try {
-            const response = await api.post('/login', data)
+            const response = await api.post("/login", data)
             const token = response.data.token
             localStorage.setItem("@TOKEN", token)
             api.defaults.headers.common.Authorization = `Bearer ${token}`
@@ -82,7 +84,7 @@ export function UserProvider({children}:IDefaultProviderProps){
         try {
             const response = await api.patch(`/users/${userId}`, data)
             if(userId == user?.id){
-                setUser({...user!, ...data})
+                setUser({...user!, ...response.data})
             }
            
             toast.success("User updated!")
@@ -94,13 +96,28 @@ export function UserProvider({children}:IDefaultProviderProps){
         }
     }
 
+    async function removeUser(userId:number) {
+        try {
+            await api.delete(`/users/${userId}`)
+            setEditUser(null)
+            toast.success("Contact deleted!")
+            navigate("/")
+            
+        } catch (error) {
+            toast.error("Error - contact not deleted")
+            console.log(error)
+        }
+    }
+
     function logOut(){
         localStorage.removeItem("@TOKEN")
         navigate("/")
     }
 
     return (
-        <UserContext.Provider value={{ userLogin, userRegister, logOut, setUser, user, editUser, setEditUser, updateUser }}>
+        <UserContext.Provider value={{ userLogin, userRegister, logOut, setUser, 
+            user, editUser, setEditUser, updateUser, removeUser 
+        }}>
             {children}
         </UserContext.Provider>
     )
