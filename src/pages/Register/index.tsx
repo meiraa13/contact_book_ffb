@@ -15,7 +15,6 @@ export function Register(){
         <StyledRegister >
 
             <div className="register-div">
-                <h2>Create your profile</h2>
                 <form onSubmit={handleSubmit(userRegister)}> 
                     <label htmlFor="fullname" >Fullname</label>
                     <input type="text" id="fullname" {...register("fullname")}/>
@@ -41,7 +40,7 @@ export function Register(){
                 </form>
             </div>
             <div>
-                <h2>Hello World</h2>
+                <h2>Create your profile</h2>
             </div>
          
         </StyledRegister>

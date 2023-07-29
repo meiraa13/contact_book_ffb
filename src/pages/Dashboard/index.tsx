@@ -21,7 +21,7 @@ export function Dashboard(){
             {editUser && <ModalEditUser />}
 
             <StyledDash className="container">
-                <div>
+                <div className="left-div">
                     <h3>Welcome to your personal agenda! here you can manage all your contacts in a safe and easy way</h3>
 
                     <button onClick={()=>setModalState(true)}>Create new contact</button>

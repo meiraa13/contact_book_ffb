@@ -31,7 +31,7 @@ export function Login(){
                     <button type="submit">Sign in</button>
                 </form>
                 <p>or click below to register</p>
-                <Link to={"/register"}>Register</Link>
+                <Link className="register" to={"/register"}>Register</Link>
             </div>
          
         </StyledLogin>

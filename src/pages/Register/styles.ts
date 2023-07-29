@@ -6,20 +6,29 @@ export const StyledRegister = styled.main`
     justify-content: center;
     align-items: center;
     gap: 10rem;
-    background-color:darkblue;
+    background-color:var(--color-tertiary);
 
     .register-div {
-        /* background-color: antiquewhite; */
-        padding: 1rem;
+        background-color: var(--color-primary);
+        padding: 2rem;
+        height: 500px;
         display: flex;
         flex-direction: column;
-        gap: 1rem;
+        border: 4px solid;
+        border-radius: 0.5rem;
     }
 
     form {
         display: flex;
         flex-direction: column;
-        gap: 1rem;
+        gap:0.5rem
+   
+        
+    }
+
+    input {
+        border: 1px solid;
+        padding: 0.5rem;
     }
 
 

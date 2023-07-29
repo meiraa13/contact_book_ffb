@@ -15,5 +15,14 @@ export const StyledDash = styled.div`
         overflow-y: auto;
     }
 
+    .left-div {
+        /* background-color: antiquewhite; */
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 2rem;
+    }
+
 
 `

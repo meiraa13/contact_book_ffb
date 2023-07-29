@@ -16,9 +16,9 @@ export const StyledModal = styled.div`
         }
 
         .modal-container {
-            width: 350px;
-            height: 300px;
-            background-color: var(--grey-4);
+            width: fit-content;
+            height: fit-content;
+            background-color: var(--color-secondary);
             border-style: none;
             color: white;
             display: flex;
@@ -33,7 +33,7 @@ export const StyledModal = styled.div`
             justify-content: space-between;
             align-items: center;
             height: 20%;
-            background-color: var(--grey-2);
+            background-color: var(--color-tertiary);
             padding: 1rem;
             border-radius: 5px 5px 0 0 ;
         }
@@ -42,6 +42,7 @@ export const StyledModal = styled.div`
             display: flex;
             flex-direction: column;
             padding: 1rem;
+            gap: 1rem;
             height: 80%;
             justify-content: space-between;
             border: 100px;
@@ -49,18 +50,15 @@ export const StyledModal = styled.div`
 
         input, select {
 
-            padding: 0.7rem;
-            background-color: var(--grey-2);
-            color: var(--grey-1);
-            border-style: none;
+            padding: 0.5rem;
+            background-color: var(--grey-1);
+            width: 300px;
+            border: 1px solid;
             border-radius: 5px;
         }
 
-        input ::placeholder {
-            color: var(--grey-1);
-        }
 
         .btn-create {
-            background-color: var(--color-primary);
+            background-color: var(--grey-1);
         }
 `

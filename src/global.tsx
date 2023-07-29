@@ -13,25 +13,28 @@ export const GlobalReset = createGlobalStyle`
 
     button {
         cursor: pointer;
+        background-color: var(--color-tertiary);
+        padding: 0.5rem;
+        border-radius: 0.5rem;
+        border-style: none;
     }   
 
     body {
 
         background-color: var(--grey-2);
-        color: white;
 
     }
 
     
     :root {
-        --color-primary: #FF577F;
-        --color-primary-focus: #FF427F;
-        --color-primary-negative: #59323F;
+        --color-primary: #9771ff;
+        --color-secondary: #8060d9;
+        --color-tertiary: #34eaba;
 
         --grey-4: #121214;
         --grey-3: #212529;
-        --grey-2: #343B41;
-        --grey-1: #868E96;
+        --grey-2: #ececec;
+        --grey-1: #f5f5f5;
         --grey-0: #f8f9fa;
 
         --negative: #E83F5B;
