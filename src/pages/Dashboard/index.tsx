@@ -8,7 +8,6 @@ import { ModalDeleteContact } from "../../components/ModalDeleteContact"
 import { UserContext } from "../../providers/UserContext"
 import { ModalUpdateContact } from "../../components/ModalUpdateContact"
 import { ModalEditUser } from "../../components/ModalEditUser"
-import { MdContactPhone} from "react-icons/md"
 import { FiPlusCircle} from "react-icons/fi"
 
 
